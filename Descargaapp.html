@@ -51,7 +51,7 @@
 
         header {
             background: linear-gradient(45deg, #2E7D32, #1976D2, #F8BBD0);
-            padding: 20px 20px 10px;
+            padding: 20px 20px 60px; /* Aumentado para acomodar los botones */
             text-align: center;
             color: white;
             position: relative;
@@ -59,7 +59,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            min-height: 40vh; /* Reducido para dar más espacio a main */
+            min-height: 50vh;
         }
 
         header h1 {
@@ -75,8 +75,12 @@
             font-family: 'Poppins', sans-serif;
             font-weight: 400;
             font-size: 1.2rem;
-            margin-bottom: 20px;
+            margin-bottom: 30px; /* Aumentado para espacio antes de los botones */
             animation: fadeIn 2s ease-in;
+        }
+
+        .header-buttons {
+            margin-top: 20px; /* Espacio entre el texto y los botones */
         }
 
         .logo-animation {
@@ -105,25 +109,14 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Ajustado para alinear al inicio */
-        }
-
-        .download-buttons {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 15px 15px 0 0; /* Solo bordes redondeados arriba */
-            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-            margin: 0 auto 0; /* Quitar margen inferior para separar del carrusel */
-            max-width: 600px;
-            margin-top: -50px; /* Subir los botones hacia el encabezado */
-            position: relative;
-            z-index: 10; /* Asegurar que los botones estén sobre el carrusel */
+            justify-content: center;
+            margin-top: 20px; /* Espacio entre header y tutorial */
         }
 
         .tutorial-container {
             background: rgba(255, 255, 255, 0.9);
             padding: 20px;
-            border-radius: 0 0 15px 15px; /* Solo bordes redondeados abajo */
+            border-radius: 15px;
             box-shadow: 0 5px 10px rgba(0,0,0,0.2);
             margin: 0 auto;
             max-width: 600px;
@@ -145,7 +138,7 @@
             font-weight: 700;
             font-size: 1rem;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 15px; /* Bordes más redondeados como en tu captura */
             margin: 8px;
             color: white;
             transition: all 0.3s ease;
@@ -303,31 +296,29 @@
 
         @media (max-width: 768px) {
             header {
-                padding: 10px 10px 5px;
+                padding: 10px 10px 40px; /* Ajustado para móviles */
                 min-height: 40vh;
             }
             header h1 { font-size: 2rem; }
             header p { font-size: 1rem; }
-            .download-btn { display: block; margin: 8px auto; width: 80%; }
+            .header-buttons .download-btn { display: block; margin: 8px auto; width: 80%; }
             .logo { width: 150px; }
             .footer-logo { width: 80px; }
-            .download-buttons, .tutorial-container { max-width: 90%; padding: 15px; }
+            .tutorial-container { max-width: 90%; padding: 15px; margin-top: 10px; }
             .swiper { max-width: 250px; }
             .carousel-item { max-width: 200px; }
             .carousel-text { font-size: 0.8rem; }
             .download-title { font-size: 1rem; }
-            .download-buttons { margin-top: -30px; } /* Ajuste para móviles */
         }
 
         @media (max-width: 480px) {
             header h1 { font-size: 1.8rem; }
             header p { font-size: 0.9rem; }
-            .download-btn { padding: 10px 20px; font-size: 0.9rem; }
+            .header-buttons .download-btn { padding: 10px 20px; font-size: 0.9rem; }
             .swiper { max-width: 220px; }
             .carousel-item { max-width: 180px; }
             .carousel-text { font-size: 0.7rem; }
             .download-title { font-size: 0.9rem; }
-            .download-buttons { margin-top: -20px; } /* Ajuste para pantallas muy pequeñas */
         }
     </style>
 </head>
@@ -337,21 +328,21 @@
         <div class="loader"></div>
     </div>
 
-    <!-- Encabezado Hero -->
+    <!-- Encabezado Hero con Botones -->
     <header>
         <h1>Descarga Mi Urvaseo Ahora</h1>
         <p>La experiencia segura y rápida que necesitas en tu móvil – Disponible para Android e iOS</p>
         <div class="logo-animation">
             <img src="Multimedia/Empresa/Logo.png" alt="Mi Urvaseo Logo" class="logo">
         </div>
-    </header>
-
-    <!-- Sección de Botones de Descarga -->
-    <main>
-        <div class="download-buttons">
+        <div class="header-buttons">
             <a href="https://play.google.com/store/apps/details?id=com.valango.websis_app&pcampaignid=web_share" class="download-btn google-play">Descargar en Google Play</a>
             <a href="https://testflight.apple.com/join/5kV24gTq" class="download-btn app-store">Descargar en App Store</a>
         </div>
+    </header>
+
+    <!-- Sección del Tutorial -->
+    <main>
         <div class="tutorial-container">
             <h2 class="download-title">La manera de registrarse</h2>
             <div class="carousel swiper">
@@ -364,7 +355,7 @@
                     <!-- Paso 2: Pantalla de Registro de Usuario -->
                     <div class="swiper-slide">
                         <img src="Multimedia/Empresa/Registro.jpeg" alt="Registro de Usuario" class="carousel-item">
-                        <p class="carousel-text">2. Ingresa tu número de cédula y tu correo electrónico personal (el mismo registrado al ingresar a la empresa) para registrarte. y acepta los terminos</p>
+                        <p class="carousel-text">2. Ingresa tu número de cédula y tu correo electrónico personal (el mismo registrado al ingresar a la empresa) para registrarte. y acepta los términos</p>
                     </div>
                     <!-- Paso 3: Recepción del Correo con Contraseña -->
                     <div class="swiper-slide">
